@@ -11,7 +11,7 @@
 }
 
 body {
-    background-image: url("assets/round.png");
+    background-image: url("../images/round.png");
 }
 #game-rules-section{
     width: 450px;
