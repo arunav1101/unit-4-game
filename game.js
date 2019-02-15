@@ -1,4 +1,4 @@
-        function randomnumber(min, max) {
+        function randomNumber(min, max) {
           return (Math.floor(Math.random() * (max - min + 1) + min))
         }
         var crystalType = [{
@@ -25,18 +25,18 @@
 
         var targetNumber;
         var imageCrystal;
-        var counter = mywins = mylooses = lastScore = 0;
+        var counter = mywins = myLosses = lastScore = 0;
 
         function startGame() {
           counter = 0;
-          targetNumber = randomnumber(19, 120);
+          targetNumber = randomNumber(19, 120);
           displayScreen();
           resetCrystalValues();
         }
 
         function resetCrystalValues() {
           for (var i = 0; i < crystalType.length; i++) {
-            let valueCheck = randomnumber(1, 12);
+            let valueCheck = randomNumber(1, 12);
             $('img[crystal-name~=' + crystalType[i].name + ']').attr("data-crystalvalue", valueCheck);
           }
         }
@@ -52,7 +52,7 @@
             imageCrystal.addClass("crystal-image");
             imageCrystal.attr("crystal-name", crystalName.name);
             imageCrystal.attr("src", crystalName.image);
-            crystalName.value = randomnumber(1, 12)
+            crystalName.value = randomNumber(1, 12)
             imageCrystal.attr("data-crystalvalue", crystalName.value);
             $("#crystals").append(imageCrystal);
           })
@@ -69,10 +69,9 @@
               $("#wins").text(mywins);
               startGame();
             } else if (counter >= targetNumber) {
-              mylooses++;
-              $("#losses").text(mylooses);
+              myLosses++;
+              $("#losses").text(myLosses);
               startGame();
             }
-
           });
         })
